@@ -1,0 +1,33 @@
+{
+  "source": "/Volumes/RYA T7 Blue 2/YTAgeFree",
+  "project_name_suggestion": "YTAGE01_Care_Series_S1",
+  "channel": "YTAGE",
+  "structure_strategy": "По спикерам и съёмочным дням, тематика внутри",
+
+  "scene_mapping": {
+    "01_Lilya_13feb_food":         ["RYA-ZVE1-1594.MP4","RYA-ZVE1-1595.MP4","RYA-ZVE1-1597.MP4","RYA-ZVE1-1598.MP4","RYA-ZVE1-1599.MP4"],
+    "02_Lilya_13feb_meds":         ["RYA-ZVE1-1604.MP4","RYA-ZVE1-1605.MP4"],
+    "03_Lilya_13feb_burnout":      ["RYA-ZVE1-1600.MP4","RYA-ZVE1-1601.MP4","RYA-ZVE1-1602.MP4","RYA-ZVE1-1603.MP4"],
+    "04_Yura_13feb_intro":         ["RYA-ZVE1-1606.MP4"],
+    "05_Yura_13feb_home_safety":   ["RYA-ZVE1-1607.MP4","RYA-ZVE1-1608.MP4"],
+    "06_Yura_13feb_dementia":      ["RYA-ZVE1-1609.MP4"],
+    "07_Yura_13feb_low_vision":    ["RYA-ZVE1-1610.MP4"],
+    "08_Yura_13feb_low_hearing":   ["RYA-ZVE1-1611.MP4"],
+    "09_Yura_13feb_walkers_rollators": ["RYA-ZVE1-1612.MP4"],
+    "10_Yura_13feb_canes":         ["RYA-ZVE1-1613.MP4"],
+    "11_Yura_13feb_static_walkers":["RYA-ZVE1-1614.MP4"],
+    "12_Yura_13feb_broll_demos":   ["RYA-ZVE1-1615.MP4","RYA-ZVE1-1616.MP4","RYA-ZVE1-1617.MP4","RYA-ZVE1-1618.MP4","RYA-ZVE1-1619.MP4","RYA-ZVE1-1620.MP4","RYA-ZVE1-1621.MP4","RYA-ZVE1-1622.MP4","RYA-ZVE1-1623.MP4","RYA-ZVE1-1624.MP4","RYA-ZVE1-1625.MP4","RYA-ZVE1-1626.MP4","RYA-ZVE1-1627.MP4","RYA-ZVE1-1628.MP4","RYA-ZVE1-1629.MP4","RYA-ZVE1-1630.MP4","RYA-ZVE1-1631.MP4","RYA-ZVE1-1632.MP4","RYA-ZVE1-1633.MP4","RYA-ZVE1-1634.MP4","RYA-ZVE1-1635.MP4","RYA-ZVE1-1636.MP4","RYA-ZVE1-1637.MP4","RYA-ZVE1-1638.MP4","RYA-ZVE1-1639.MP4","RYA-ZVE1-1640.MP4","RYA-ZVE1-1641.MP4"],
+
+    "20_Masha_19feb_intro":        ["RYA-FX3-0030.MP4","RYA-FX3-0031.MP4"],
+    "21_Masha_19feb_food_wrap":    ["RYA-FX3-0032.MP4"],
+    "22_Masha_19feb_burnout_wrap": ["RYA-FX3-0033.MP4","RYA-FX3-0034.MP4","RYA-FX3-0035.MP4"],
+    "23_Masha_19feb_communication":["RYA-FX3-0036.MP4","RYA-FX3-0037.MP4","RYA-FX3-0038.MP4"],
+    "24_Masha_19feb_safety_wrap":  ["RYA-FX3-0039.MP4","RYA-FX3-0040.MP4"],
+    "25_Masha_19feb_vision_hearing_wrap": ["RYA-FX3-0041.MP4"],
+    "26_Masha_19feb_outro_pressure": ["RYA-FX3-0042.MP4"]
+  },
+
+  "audio": {
+    "DJI_TX1_2026-02-13": ["TX1/TX01_MIC035_20260213_181554_orig.wav"]
+  }
+}

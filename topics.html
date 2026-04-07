@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8">
+<title>YTAgeFree — глубокий разбор</title>
+<style>
+:root{--bg:#0f1115;--card:#1a1d24;--mut:#8a8f99;--fg:#e8eaed;--ac:#7cc4ff;--warn:#f0b429;--ok:#7be8a4;--lilya:#ff9466;--yura:#7be8a4;--masha:#a78bfa;--olesk:#f0b429}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,system-ui,Segoe UI,sans-serif;background:var(--bg);color:var(--fg);padding:24px;line-height:1.55;max-width:1100px;margin:0 auto}
+h1{margin:0 0 4px;font-size:26px}
+h2.section{margin-top:36px;font-size:20px;border-bottom:1px solid #2a2e38;padding-bottom:8px}
+.sub{color:var(--mut);margin-bottom:24px}
+.stats{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+.stat{background:var(--card);padding:10px 14px;border-radius:8px;font-size:13px}
+.stat b{display:block;font-size:18px;color:var(--ac)}
+.stat span{color:var(--mut);font-size:11px}
+
+.day{background:#161922;border-radius:10px;padding:16px 18px;margin-bottom:20px;border:1px solid #252934}
+.day h3{margin:0 0 4px;font-size:17px}
+.day .meta{color:var(--mut);font-size:13px;margin-bottom:6px}
+
+.topic{background:var(--card);border-radius:10px;padding:16px 18px;margin:10px 0;border-left:4px solid var(--ac)}
+.topic.lilya{border-left-color:var(--lilya)}
+.topic.yura{border-left-color:var(--yura)}
+.topic.masha{border-left-color:var(--masha)}
+.topic.olesk{border-left-color:var(--olesk)}
+.topic h4{margin:0 0 4px;font-size:16px}
+.topic .id{color:var(--ac);font-family:ui-monospace,Menlo,monospace;font-size:12px;margin-right:8px}
+.topic .speaker{display:inline-block;font-size:11px;padding:2px 7px;border-radius:10px;background:#272b35;color:#cdd2db;margin-right:6px}
+.topic .speaker.lilya{background:#3a2418;color:var(--lilya)}
+.topic .speaker.yura{background:#1a3325;color:var(--yura)}
+.topic .speaker.masha{background:#2a1f3a;color:var(--masha)}
+.topic .meta{color:var(--mut);font-size:12px;margin:4px 0 8px}
+.topic .sum{margin:8px 0 10px;color:#cdd2db;font-size:14px}
+table.struct{width:100%;border-collapse:collapse;font-size:12px;margin-top:8px}
+table.struct th,table.struct td{text-align:left;padding:4px 8px;border-bottom:1px solid #252934;vertical-align:top}
+table.struct th{color:var(--mut);font-weight:500}
+table.struct td.clip{font-family:ui-monospace,Menlo,monospace;color:#cdd2db;white-space:nowrap}
+table.struct td.dur{color:var(--mut);white-space:nowrap}
+.note{background:#1f1a10;border-left:3px solid var(--warn);padding:8px 12px;color:#e6d6a7;border-radius:4px;margin-top:8px;font-size:12px}
+
+.pair-table{width:100%;border-collapse:collapse;background:var(--card);border-radius:8px;overflow:hidden;font-size:13px}
+.pair-table th,.pair-table td{padding:10px 12px;text-align:left;border-bottom:1px solid #252934}
+.pair-table th{background:#1f232c;color:var(--ac);font-weight:600}
+.pair-table td.id{font-family:ui-monospace,Menlo,monospace;font-size:11px;color:var(--mut)}
+
+footer{color:var(--mut);font-size:12px;margin-top:40px;border-top:1px solid #2a2e38;padding-top:14px}
+</style></head><body>
+
+<h1>YTAgeFree — глубокий разбор перед монтажом</h1>
+<div class="sub">Источник: <code>/Volumes/RYA T7 Blue 2/YTAgeFree</code> · сгенерировано 2026-04-08 · версия 2 (с разделением Лили/Юры)</div>
+
+<div class="stats">
+  <div class="stat"><b>61</b><span>видеоклипов</span></div>
+  <div class="stat"><b>375 мин</b><span>общая длительность</span></div>
+  <div class="stat"><b>19</b><span>тематических блоков</span></div>
+  <div class="stat"><b>2</b><span>съёмочных дня</span></div>
+  <div class="stat"><b>4</b><span>спикера</span></div>
+  <div class="stat"><b>1</b><span>DJI WAV</span></div>
+</div>
+
+<h2 class="section">Структура съёмки</h2>
+
+<div class="day">
+  <h3>День 1 — 13 февраля 2026, Sony ZVE1, петличка DJI TX1</h3>
+  <div class="meta">Экспертные интервью с практиками надомного отдела фонда «Старость в радости»</div>
+  <ul>
+    <li><span style="color:var(--lilya)">●</span> <b>Лиля (Лилия Майорова)</b> — эксперт фонда, надомный отдел, с 2018 г. Темы: питание, лекарства, выгорание ухаживающего</li>
+    <li><span style="color:var(--yura)">●</span> <b>Юра (Юрий Баев)</b> — эксперт фонда, надомный отдел, с 2019 г. Темы: <b>адаптация пространства, ТСР (трости, ходунки), безопасность дома</b></li>
+  </ul>
+</div>
+
+<div class="day">
+  <h3>День 2 — 19 февраля 2026, Sony FX3, встроенный звук</h3>
+  <div class="meta">Обёрточный материал — <b>Маша</b> пересказывает темы Лили и Юры, добавляет эмоциональные истории, делает призывы</div>
+  <ul>
+    <li><span style="color:var(--masha)">●</span> <b>Маша</b> — методолог фонда, ведущая обучения региональных команд</li>
+    <li><span style="color:var(--olesk)">●</span> <b>Елизавета Олескина</b> — директор фонда, появляется в финальных заставках с призывами</li>
+  </ul>
+</div>
+
+<h2 class="section">День 1 · Лиля Майорова</h2>
+
+<div class="topic lilya">
+<div><span class="id">T01</span><span class="speaker lilya">Лиля</span><span class="dur">1h 24m</span></div>
+<h4>Питание пожилых: как накормить, адаптивная посуда</h4>
+<div class="sum">Лиля подробно объясняет, как уговорить пожилого поесть: красивая подача, яркая тарелка с каемочкой, право выбора (картошка или рыба?), режим дня (вставать в 5 или 10 — подстроиться), адаптивная посуда (изогнутые ложки после инсульта, силиконовый коврик от скольжения, тарелки с бортиком, на присосках), особенности при деменции (отвлекать вареньем после ванны).</div>
+<table class="struct"><tr><th>Клип</th><th>Длит.</th><th>Роль в структуре</th></tr>
+<tr><td class="clip">ZVE1-1594</td><td class="dur">6m33s</td><td>Стартовый дубль: проблема + подача + адаптивная посуда (обрывается на стуке в дверь)</td></tr>
+<tr><td class="clip">ZVE1-1595</td><td class="dur">2m15s</td><td>Бэкстейдж: обсуждение структуры, решают переснять с адаптивной посуды</td></tr>
+<tr><td class="clip">ZVE1-1597</td><td class="dur">0m09s</td><td>Реплика-напоминание: упомянуть название фонда</td></tr>
+<tr><td class="clip">ZVE1-1598</td><td class="dur">9m39s</td><td><b>ОСНОВНОЙ ДУБЛЬ:</b> проблема → подача → режим → выбор → деменция</td></tr>
+<tr><td class="clip">ZVE1-1599</td><td class="dur">35m11s</td><td>Длинный дубль с углублениями: эстетика, удобная посуда, сухость во рту, атмосфера</td></tr>
+<tr><td class="clip">ZVE1-1604</td><td class="dur">30m25s</td><td>(пограничный) Переход к лекарствам — см. T02</td></tr>
+</table>
+<div class="note">Лучший связный дубль — 1598. 1599 — расширения и переснятые куски.</div>
+</div>
+
+<div class="topic lilya">
+<div><span class="id">T02</span><span class="speaker lilya">Лиля</span><span class="dur">50m</span></div>
+<h4>Лекарства: контроль приёма, нельзя «одолжить»</h4>
+<div class="sum">Метафора: нельзя делиться очками — нельзя делиться таблетками. Контроль приёма у пожилого с деменцией, диабет, нельзя самоназначать «потому что соседке помогает». В конце 1605 — самопредставление Лили на камеру.</div>
+<table class="struct"><tr><th>Клип</th><th>Длит.</th><th>Роль</th></tr>
+<tr><td class="clip">ZVE1-1604</td><td class="dur">30m25s</td><td>Вторая половина — про таблетки и диабет (общая с T01)</td></tr>
+<tr><td class="clip">ZVE1-1605</td><td class="dur">19m56s</td><td><b>ОСНОВНОЙ ДУБЛЬ:</b> метафора с очками + самопредставление в финале</td></tr>
+</table>
+</div>
+
+<div class="topic lilya">
+<div><span class="id">T03</span><span class="speaker lilya">Лиля</span><span class="dur">1h</span></div>
+<h4>Эмоциональное выгорание ухаживающего и забота о себе</h4>
+<div class="sum">Выгорание ≠ «не могу больше», а накопление невыраженных чувств. Метафора кислородной маски в самолёте. Принятие реальности через цитату Ницше. Просить помощь, не геройствовать. Дать усталости имя.</div>
+<table class="struct"><tr><th>Клип</th><th>Длит.</th><th>Роль</th></tr>
+<tr><td class="clip">ZVE1-1600</td><td class="dur">20m15s</td><td><b>ОСНОВНОЙ ДУБЛЬ:</b> что такое выгорание</td></tr>
+<tr><td class="clip">ZVE1-1601</td><td class="dur">2m11s</td><td>Подсегмент: метафора маски — забота о себе не эгоизм</td></tr>
+<tr><td class="clip">ZVE1-1602</td><td class="dur">1m49s</td><td>Подсегмент: «встаешь ногами на правду» — Ницше</td></tr>
+<tr><td class="clip">ZVE1-1603</td><td class="dur">35m19s</td><td>Расширение и пересъёмки темы выгорания/срывов</td></tr>
+</table>
+</div>
+
+<h2 class="section">День 1 · Юра Баев — адаптация пространства и ТСР</h2>
+<div style="color:var(--mut);font-size:13px;margin-bottom:12px">Это отдельный спикер с другой экспертизой. Все «технические» темы серии — это Юра, не Лиля.</div>
+
+<div class="topic yura">
+<div><span class="id">T04</span><span class="speaker yura">Юра</span><span class="dur">3m</span></div>
+<h4>Юра — представление эксперта</h4>
+<div class="sum">Брифинг продюсера про формат + самопредставление Юры: отдел надомного ухода с 2019, эксперт по адаптации пространства, контрактуры, пролежни.</div>
+<table class="struct"><tr><td class="clip">ZVE1-1606</td><td class="dur">3m23s</td><td>Цельный</td></tr></table>
+</div>
+
+<div class="topic yura">
+<div><span class="id">T05</span><span class="speaker yura">Юра</span><span class="dur">33m</span></div>
+<h4>Безопасность дома: полы, освещение, ванна, коридор</h4>
+<div class="sum">Самая массовая тема Юры. Пожилые шаркают — любые изъяны на полу опасны (порванный линолеум, торчащие края ковров, отсутствующие плитки). Освещенность. <b>Ванна — главная зона риска:</b> перешагивание через борт, не за что держаться, хватаются за раковину/полотенцесушитель.</div>
+<table class="struct"><tr><th>Клип</th><th>Длит.</th><th>Роль</th></tr>
+<tr><td class="clip">ZVE1-1607</td><td class="dur">18m32s</td><td><b>ОСНОВНОЙ ДУБЛЬ:</b> вступление + освещение + ванна + коридор</td></tr>
+<tr><td class="clip">ZVE1-1608</td><td class="dur">14m13s</td><td>Продолжение: полы, изъяны, гаджеты, общий вывод</td></tr>
+</table>
+</div>
+
+<div class="topic yura">
+<div><span class="id">T06</span><span class="speaker yura">Юра</span><span class="dur">3m</span></div>
+<h4>Деменция: не менять обстановку, риск ухода из дома</h4>
+<div class="sum">Люди с деменцией не помнят недавнего, не узнают близких. Новые предметы — стресс, могут выбросить. Сохранять привычную обстановку. Риск выйти и не вернуться: подскользнуться, замёрзнуть зимой / тепловой удар летом.</div>
+<table class="struct"><tr><td class="clip">ZVE1-1609</td><td class="dur">3m18s</td><td>Цельный короткий дубль</td></tr></table>
+</div>
+
+<div class="topic yura">
+<div><span class="id">T07</span><span class="speaker yura">Юра</span><span class="dur">12m</span></div>
+<h4>Слабовидящие пожилые: пространство и тактильные маркеры</h4>
+<div class="sum">Не убирать резко привычные ориентиры — раньше человек мог нащупать. Изучить пространство вместе. Тактильные маркеры: ленты на стенах, квадратики на столах для определения границ.</div>
+<table class="struct"><tr><td class="clip">ZVE1-1610</td><td class="dur">12m24s</td><td>Цельный дубль</td></tr></table>
+</div>
+
+<div class="topic yura">
+<div><span class="id">T08</span><span class="speaker yura">Юра</span><span class="dur">7m</span></div>
+<h4>Снижение слуха + умные краны и реле для безопасности</h4>
+<div class="sum">Тугоухость, как разговаривать (один источник звука, убрать радио/телевизор). Бонус — рассказ про электрические шарнирные краны на воду и газ, реле с WiFi, для контроля забывчивости при когнитивных нарушениях.</div>
+<table class="struct"><tr><td class="clip">ZVE1-1611</td><td class="dur">7m00s</td><td>Цельный дубль (две связанные подтемы)</td></tr></table>
+</div>
+
+<div class="topic yura">
+<div><span class="id">T09</span><span class="speaker yura">Юра</span><span class="dur">22m</span></div>
+<h4>Ходунки-роллаторы для улицы</h4>
+<div class="sum">Для улицы и больших расстояний (поликлиника, магазин). Чем отличаются от статичных. Связь с ИПР (индивидуальная программа реабилитации). В финале — самопредставление Юры на камеру.</div>
+<table class="struct"><tr><td class="clip">ZVE1-1612</td><td class="dur">21m59s</td><td><b>ОСНОВНОЙ ДУБЛЬ</b> + самопредставление</td></tr></table>
+</div>
+
+<div class="topic yura">
+<div><span class="id">T10</span><span class="speaker yura">Юра</span><span class="dur">17m</span></div>
+<h4>Трости: виды, регулировка по росту, противоскользящий шип</h4>
+<div class="sum">При боли в колене/бедре. Виды: с одной опорой (соскальзывает), с площадкой. Как отрегулировать по росту. Зимний шип-наконечник. Анонс отдельного видео про регулировку.</div>
+<table class="struct"><tr><td class="clip">ZVE1-1613</td><td class="dur">16m38s</td><td><b>ОСНОВНОЙ ДУБЛЬ</b></td></tr></table>
+</div>
+
+<div class="topic yura">
+<div><span class="id">T11</span><span class="speaker yura">Юра</span><span class="dur">27m</span></div>
+<h4>Статичные ходунки + как вставать со стула</h4>
+<div class="sum">Ходунки с большой площадью опоры — когда трость недостаточна. Регулировка по высоте. Демонстрация: как пожилой встаёт со стула (раскачивается, держится за что попало). Перекрёстная ссылка на ролик про трости.</div>
+<table class="struct"><tr><td class="clip">ZVE1-1614</td><td class="dur">26m53s</td><td><b>ОСНОВНОЙ ДУБЛЬ</b> + перекрёстная ссылка</td></tr></table>
+</div>
+
+<div class="topic yura">
+<div><span class="id">T12</span><span class="speaker yura">Юра · B-roll</span><span class="dur">9m · 27 клипов</span></div>
+<h4>B-roll: демо тростей и ходунков</h4>
+<div class="sum">Снято сразу после интервью с Юрой. Крупные планы кнопок, тормозов, шипов, складывания, регулировки. Использовать для врезок в T09/T10/T11. Реплики оператора и Юры: «давайте, нажимайте кнопку», «фиксатор», «трансформер для складывания».</div>
+<table class="struct"><tr><th>Группа</th><th>Клипы</th><th>Использовать в</th></tr>
+<tr><td>Кнопки/тормоза ходунков</td><td class="clip">1615-1622</td><td>T09 / T11</td></tr>
+<tr><td>Демо «садится — поворот»</td><td class="clip">1623-1628</td><td>T11</td></tr>
+<tr><td>Фиксатор / складывание / переключение режимов</td><td class="clip">1629-1635</td><td>T09 / T11</td></tr>
+<tr><td>Противоскользящий шип трости</td><td class="clip">1636-1641</td><td>T10 (1637 — основной дубль про шип)</td></tr>
+</table>
+</div>
+
+<h2 class="section">День 2 · Маша + Олескина — обёртки и истории</h2>
+<div style="color:var(--mut);font-size:13px;margin-bottom:12px">Маша записывает обёртки к темам Лили и Юры (которых физически 19.02 нет), добавляет эмоциональные истории и призывы.</div>
+
+<div class="topic masha">
+<div><span class="id">T13</span><span class="speaker masha">Маша</span><span class="dur">17m</span></div>
+<h4>Интро ко всему сезону + бэкстейдж</h4>
+<div class="sum">Анонс обучения региональных команд («закормленные и ожившие»). Бэкстейдж: разговоры про ИИ, GPT, обсуждение формата. Не финальный материал, но контекст съёмки.</div>
+<table class="struct"><tr><td class="clip">FX3-0030</td><td class="dur">0m22s</td><td>Анонс региональных команд</td></tr><tr><td class="clip">FX3-0031</td><td class="dur">16m37s</td><td>Бэкстейдж + обсуждение интро к питанию</td></tr></table>
+</div>
+
+<div class="topic masha">
+<div><span class="id">T14</span><span class="speaker masha">Маша</span><span class="dur">6m</span></div>
+<h4>Обёртка к питанию (Лиля) + призыв</h4>
+<div class="sum">Маша делает интро к сюжету Лили про сервировку. Призыв: «помощь складывается из тысяч пожертвований 300-700 рублей».</div>
+<table class="struct"><tr><td class="clip">FX3-0032</td><td class="dur">6m28s</td><td>Обёртка T01 + призыв</td></tr></table>
+</div>
+
+<div class="topic masha">
+<div><span class="id">T15</span><span class="speaker masha">Маша</span><span class="dur">8m</span></div>
+<h4>Обёртка к выгоранию (Лиля)</h4>
+<div class="sum">Время ухода — всегда тяжёлое. Срывы и выгорание. Просить помощь напрямую и однозначно. Призыв горячей линии. Обёртка к T03.</div>
+<table class="struct"><tr><td class="clip">FX3-0033</td><td class="dur">1m40s</td><td>«Время ухода — всегда тяжёлое»</td></tr><tr><td class="clip">FX3-0034</td><td class="dur">4m43s</td><td>Призыв обращаться + «берегите себя»</td></tr><tr><td class="clip">FX3-0035</td><td class="dur">1m44s</td><td>«Просить конкретно и однозначно»</td></tr></table>
+</div>
+
+<div class="topic masha">
+<div><span class="id">T16</span><span class="speaker masha">Маша</span><span class="dur">9m</span></div>
+<h4>Как не срываться: обиды, 3 минуты «как ты, мам?»</h4>
+<div class="sum">Самостоятельная тема Маши (не обёртка): обиды как внутреннее состояние. Дать продышаться. Важность 3 минут качественного контакта вместо чисто бытового ухода. «Покажите старый фильм, который напомнит молодость».</div>
+<table class="struct"><tr><td class="clip">FX3-0036</td><td class="dur">3m05s</td><td>Тема обид</td></tr><tr><td class="clip">FX3-0037</td><td class="dur">1m42s</td><td>Призыв + обсуждение перед камерой</td></tr><tr><td class="clip">FX3-0038</td><td class="dur">4m17s</td><td>3 качественные минуты + старый фильм</td></tr></table>
+</div>
+
+<div class="topic masha">
+<div><span class="id">T17</span><span class="speaker masha">Маша</span><span class="dur">26m</span></div>
+<h4>Обёртка к безопасности дома (Юра) — история Пелагеи Ивановны</h4>
+<div class="sum"><b>Самый сильный обёрточный кусок всей съёмки.</b> Маша рассказывает реальную историю учительницы 89 лет: упала в ванне, на неё лился кипяток, через трое суток умерла. Разбирают почему: не было поручня, ступеньки, нескользящего коврика, сиденья. Нескользящий коврик стоит 300 руб. Близкие никогда не попросят сами — это унизительно. Упредительная забота. История с ковром (после возвращения папы из больницы выкинули — упал, слёг). Прямая обёртка к T05.</div>
+<table class="struct"><tr><td class="clip">FX3-0039</td><td class="dur">17m48s</td><td><b>ОСНОВНОЙ обёрточный монолог</b> — история Пелагеи Ивановны</td></tr><tr><td class="clip">FX3-0040</td><td class="dur">7m46s</td><td>Расширение: коляска, лежачие, лекарства, полипрагмазия, мостик к пролежням</td></tr></table>
+<div class="note">FX3-0039 — лучший нарратив 19.02. История Пелагеи Ивановны должна быть ключевым моментом ролика по безопасности.</div>
+<div class="note">FX3-0040 захватывает несколько тем — может быть смонтирован как «трейлер сезона».</div>
+</div>
+
+<div class="topic masha">
+<div><span class="id">T18</span><span class="speaker masha">Маша + Олескина</span><span class="dur">5m</span></div>
+<h4>Обёртка к зрению/слуху (Юра) — личная история про деда</h4>
+<div class="sum">Маша: ухудшение слуха = бабушка не открывает дверь, телевизор громче. Зрение — катаракта, ОМС, операции. <b>Личная история</b>: «у меня ослеп дедушка, всю жизнь писал книги, преподавал. Когда ослеп, умер за полтора года». В финале — заставка Олескиной как директора фонда.</div>
+<table class="struct"><tr><td class="clip">FX3-0041</td><td class="dur">4m52s</td><td>Обёртка зрение+слух + история про деда + Олескина</td></tr></table>
+</div>
+
+<div class="topic masha">
+<div><span class="id">T19</span><span class="speaker masha">Маша + Татьяна</span><span class="dur">7m</span></div>
+<h4>Outro: пролежни, функциональная кровать + анонс будущих тем</h4>
+<div class="sum">Финальный кусок съёмки. Маша и Татьяна (новый спикер) обсуждают будущие сюжеты: пролежни, функциональная кровать (когда добро/вред), скользящие простыни, тактильные мешочки для деменции, духи «Красная Москва», адаптивная посуда, пояса. Анонс «второго сезона». Финальный титр «Продолжение следует».</div>
+<table class="struct"><tr><td class="clip">FX3-0042</td><td class="dur">7m06s</td><td>Outro + дорожная карта будущих тем</td></tr></table>
+<div class="note">Это анонс — может стать teaser-ом «продолжение следует» для конца ролика.</div>
+</div>
+
+<h2 class="section">Готовая раскладка финальных роликов</h2>
+<p style="color:var(--mut);font-size:13px">Каждый финальный ролик = обёртка Маши (FX3) + экспертная часть Лили или Юры (ZVE1)</p>
+
+<table class="pair-table">
+<tr><th>#</th><th>Ролик</th><th>Обёртка (FX3)</th><th>Эксперт (ZVE1)</th><th>B-roll</th></tr>
+<tr><td>1</td><td>Питание пожилых</td><td class="id">T14 → FX3-0032</td><td class="id">T01 → ZVE1-1594..1599</td><td>—</td></tr>
+<tr><td>2</td><td>Лекарства и контроль приёма</td><td class="id">— (нет)</td><td class="id">T02 → ZVE1-1604..1605</td><td>—</td></tr>
+<tr><td>3</td><td>Эмоциональное выгорание</td><td class="id">T15 → FX3-0033..0035</td><td class="id">T03 → ZVE1-1600..1603</td><td>—</td></tr>
+<tr><td>4</td><td>Как не срываться на близких</td><td class="id">T16 → FX3-0036..0038</td><td class="id">— (Маша сама)</td><td>—</td></tr>
+<tr><td><b>5</b></td><td><b>Безопасность дома: ванна, полы, поручни</b></td><td class="id">T17 → FX3-0039..0040</td><td class="id">T05 → ZVE1-1607..1608</td><td>—</td></tr>
+<tr><td>6</td><td>Деменция: обстановка и риск ухода</td><td class="id">— (нет)</td><td class="id">T06 → ZVE1-1609</td><td>—</td></tr>
+<tr><td>7</td><td>Слабовидящий: тактильные маркеры</td><td class="id">T18 (часть)</td><td class="id">T07 → ZVE1-1610</td><td>—</td></tr>
+<tr><td>8</td><td>Снижение слуха + умные краны</td><td class="id">T18 (часть)</td><td class="id">T08 → ZVE1-1611</td><td>—</td></tr>
+<tr><td>9</td><td>Ходунки-роллаторы</td><td class="id">— (нет)</td><td class="id">T09 → ZVE1-1612</td><td class="id">T12: 1615-1635</td></tr>
+<tr><td>10</td><td>Трости: подбор, регулировка, шип</td><td class="id">— (нет)</td><td class="id">T10 → ZVE1-1613</td><td class="id">T12: 1636-1641</td></tr>
+<tr><td>11</td><td>Статичные ходунки + как вставать</td><td class="id">— (нет)</td><td class="id">T11 → ZVE1-1614</td><td class="id">T12: 1623-1635</td></tr>
+<tr><td>—</td><td>Teaser сезона 2</td><td class="id">T19 → FX3-0042</td><td class="id">—</td><td>—</td></tr>
+</table>
+
+<h2 class="section">Ключевые наблюдения</h2>
+<div class="note">⚠ <b>1606-1614 — это не Лиля, а Юра Баев</b>. Лиля (с 2018) делает «мягкие» темы (питание, выгорание, лекарства), Юра (с 2019) — все «технические» темы (пространство, безопасность, ТСР).</div>
+<div class="note">FX3 19.02 — это <b>обёрточный день</b>. Лили и Юры физически нет, Маша пересказывает их темы и добавляет эмоциональные истории.</div>
+<div class="note">Темы 9, 10, 11 (ходунки/трости) — без обёрток Маши. Возможно их добавят позже, или роликами без обёртки.</div>
+<div class="note">Тема 2 (лекарства) — без обёртки. Может стать частью ролика про выгорание или отдельным.</div>
+<div class="note">FX3-0040 — единственный клип где Маша одновременно говорит про коляски, лежачих, лекарства, полипрагмазию и пролежни. На монтаже надо аккуратно нарезать на куски для разных роликов.</div>
+
+<footer>
+Глубокий разбор v2 — выполнен ассистентом из 61 транскрипта whisper large-v3.<br>
+Артефакты: <a href="topics.json" style="color:var(--ac)">topics.json</a> · <a href="folder_plan.json" style="color:var(--ac)">folder_plan.json</a> · <a href="transcripts_digest.md" style="color:var(--ac)">transcripts_digest.md</a>
+</footer>
+
+</body></html>
